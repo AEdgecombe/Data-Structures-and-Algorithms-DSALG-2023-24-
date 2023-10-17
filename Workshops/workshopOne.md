@@ -370,3 +370,72 @@ In this method, the queue is implemented using a circular array, where the head 
 *Head is tail + 1*
 
 *As the queue will only become full/empty after the operation is performed, there needs to be a catch before that is executed, like maintaining an empty space within the array*
+
+# Exercises - Data Structures and Algorithms
+
+**Consider the following problem, based on an old problem known as Josephus Problem**
+
+In a children’s game called “Pass the Potato”, a group of n children sit in a circle passing the potato around the circle in a clockwise direction. The children continue passing the potato until a leader rings a bell, at which time the child holding the potato must pass the potato to the next child and leave the game. The remaining children close up the circle. This
+process is repeated until there is only one child left in the circle who is declared the winner.Describe how you would use the array data structure (a static data structure) for the solution of this problem. What are the limitations of using the array data structure for the solution of this problem?
+
+*You could initialize an array of size n children, where n has to be greater than 1. You would then have to iterate through each index value of the array (presumably 0 to n -1) m times. Upon the completion of this, a 'pop' method can be called to remove the element of which the index value is after m iterations. Repeat until the length of the array is 1 and declare a winner*
+
+**How many data structure examples can you find in this?**
+
+Sally arrives at the train station with just a few minutes to spare. This weekend is going to be a disaster. She studies the electronic map on the wall for a few seconds in confusion. She then realizes that she just needs to select her destination from the alphabetical list of buttons on the right. When she presses Gloucester, a path on the map lights up–so, she should take the blue train to Birmingham, where she can connect to the Red train that will
+take her to Gloucester. The wait in line to buy her ticket doesn’t take long. She hurries to the platform and approaches the fourth coach of the train. Double-checking that her ticket says “Coach 4”, she boards the train and finds a seat. Whew, just in time, as a few seconds later the trains pulls out of the station. About an hour into the journey Sally decides it’s time for lunch. She walks through coaches 5, 6, and 7 to arrive at coach 8, the dining coach.She grabs the top tray (it’s still warm from the tray dryer) and heads for the sweet
+dispenser machine, thinking to herself, “May as well figure out what to have for dessert first, as usual. Hmmm, that’s my favourite Chocolate bar in slot F4.” She presses the button contentedly, and thinks, “Looks like this is going to be a nice weekend after all. Thanks goodness for data structures.”
+
+*Array, graph, key-value pairs, linear, stack and matrix*
+
+**Show the state of each stack after the operations**
+
+*For a, it orders S2 as a stack from biggest to smallest - it reverses the order*
+*For b, it makes the stack (S1) 3,7,11*
+
+**State of queue after operations**
+
+*Stack (3,2,12,5) Queue (8,12)*
+
+**Determine if each is a queue/stack/neither**
+
+*a, stack, lifo*
+*b, stack, lifo*
+*c, queue, fifo*
+*d, neither, unspecified order*
+*e, neither, this is backtracking algorithm*
+*f, queue, fifo*
+*g, neither, random lottery*
+*h, neither, unspecified retrieval method*
+*i, queue, fifo*
+*j, neither, unspecified*
+
+**Show how the data items can be transferred from stack S1 to stack S2 using one additional stack S3. The data items in stack S2 must be in the same order as they were when stored in stack S1.**
+
+*Pop the items from s1 to s3 for the size of s1 until s3 is a reversal of s1, then simply pop from s3 to s2*
+
+**Show how the contents of stack S1 can be reversed using two additional stacks S2 &S3**
+
+*Continue from last time, but just pop from s2 to s1*
+
+**Using only the Enqueue and Dequeue found in the queue ADT design algorithms: Design an algorithm to count the number of items stored in a queue. The queue must be unchanged at the end of the procedure. Design an algorithm called CatQueue that concatenates two queues together i.e. the second queue is to be put at the end of the first queue. Design an algorithm design an algorithm called CopyQueue that copies the contents of a queue to a new queue.**
+
+*Create a temporary queue to store the contents of the queue and then restore it after, obviously creating a variable to keep track of the size of the new queue*
+
+*Dequeue the contents of the second queue and enqueue them to the first*
+
+*To copy, just dequeue from the original queue and enqueue them to a new queue*
+
+**Using only the algorithms found in the queue ADT and a stack ADT write an algorithm called RevQueue that reverses the contents of a queue.**
+
+    def reverseQueue(queue):
+        stack = Stack()
+    
+        while not queue.isEmpty():
+            item = queue.dequeue()
+            stack.push(item)
+    
+        while not stack.isEmpty():
+            item = stack.pop()
+            queue.enqueue(item)
+
