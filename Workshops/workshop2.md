@@ -1,4 +1,4 @@
-# Workshop 2 - Tools of the Trade: Part 1 - Complexity of Algorithms
+# Workshop Two: Tools of the Trade: Part 1 - Complexity of Algorithms
 
 ## 2.1 Efficiency of Algorithms
 

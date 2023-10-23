@@ -1,4 +1,4 @@
-# Introduction to Data Structures Applications: Stacks and Queues
+# Workshop One: Introduction to Data Structures Applications: Stacks and Queues
 
 Three keywords throughout the module: Efficiency, Trade-off and Tools
 
